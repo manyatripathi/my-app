@@ -10,6 +10,6 @@ node
    def JAVA_HOME = tool "JAVA_HOME"
    env.PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"
     
-      sh "${MVN_HOME}/bin/mvn package"
+      sh 'mvn package'
   }
 }
