@@ -6,7 +6,10 @@ node
   }
   stage('compile-package')
   {
-      def MVN_HOME= tool name: 'maven3', type: 'maven'
+      def MAVEN_HOME = tool "MAVEN_HOME"
+   def JAVA_HOME = tool "JAVA_HOME"
+   env.PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"
+    
       sh "${MVN_HOME}/bin/mvn package"
   }
 }
