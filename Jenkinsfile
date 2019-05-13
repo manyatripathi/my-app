@@ -6,6 +6,7 @@ node
   }
   stage('compile-package')
   {
-      sh 'mvn package'
+      def MVN_HOME= tool name: 'maven3', type: 'maven'
+      sh "${MVN_HOME}/bin/mvn package"
   }
 }
