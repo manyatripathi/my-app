@@ -10,5 +10,7 @@ node
    def JAVA_HOME = tool "JAVA_HOME"
    env.PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"
     sh "mvn clean"
+    sh "mvn compile"
+    sh "mvn package"
   }
 }
