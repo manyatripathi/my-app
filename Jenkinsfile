@@ -6,7 +6,7 @@ node
   }
   stage('compile-package')
   {
-      def MAVEN_HOME = tool "MAVEN_HOME"
-      sh 'mvn package'
+      def MAVEN_HOME = tool name: 'MAVEN_HOME', type: 'maven'
+    sh "${MAVEN_HOME}/bin/mvn package"
   }
 }
