@@ -20,7 +20,7 @@ node
       env.PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"
       withSonarQubeEnv('sonar-1')
       {
-          sh 'sudo mvn sonar:sonar
+          sh 'sudo mvn sonar:sonar'
       }
   }
 }
