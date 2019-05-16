@@ -48,13 +48,13 @@ node
 	stage('unit test')
   
 	{
-      
-  
-		sh "sudo mvn test"
+    		sh "sudo mvn test"
 		junit 'target/surefire-reports/*.xml'
+		archiveArtifacts '**/*'
+		
 	}
 	stage('code coverage')
-	{
+	{	
 		sh "sudo mvn cobertura:cobertura"
 		publishCoverage adapters: [coberturaAdapter('/target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
 		
