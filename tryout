@@ -55,7 +55,7 @@ node
 	}
 	stage('code coverage')
 	{	
-		sh "sudo mvn cobertura:cobertura"
+		sh "sudo mvn cobertura:cobertura -X"
 		publishCoverage adapters: [coberturaAdapter('/target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
 		
 	}
