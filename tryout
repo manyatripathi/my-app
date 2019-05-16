@@ -13,9 +13,7 @@ node
 	{
       
 		git 'https://github.com/manyatripathi/my-app'
-      
-		archiveArtifacts '**/*'
-      sh "sudo mvn clean"
+      		sh "sudo mvn clean"
   
 	}
   
@@ -24,8 +22,6 @@ node
 	{
       
 		sh "sudo mvn compile"
-      
-		archiveArtifacts '**/*'
   
 	}
   
@@ -41,7 +37,6 @@ node
       
 		}
       
-		archiveArtifacts '**/*'
   
 	}
   
@@ -50,7 +45,6 @@ node
 	{
     		sh "sudo mvn test"
 		junit 'target/surefire-reports/*.xml'
-		archiveArtifacts '**/*'
 		
 	}
 	stage('code coverage')
