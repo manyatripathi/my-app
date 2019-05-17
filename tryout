@@ -62,7 +62,10 @@ node
 	
 	stage('push docker image')
 	{
-		sh 'docker login -u manya97 -p manya@docker'
+		withCredentials([string(credentialsId: 'a5220faf-00b9-444a-8ccf-f6f84ba31e84', variable: 'docker_pwd')]) 
+		{
+    			sh "docker login -u manya97 -p ${docker_pwd}"	
+		}
 		sh 'docker push manya97/jenkins_tryout:0.1'
 	}
 
