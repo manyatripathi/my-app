@@ -47,11 +47,15 @@ node
 		junit 'target/surefire-reports/*.xml'
 		
 	}
-	stage(war)
+	
+	stage('war')
+	
 	{
 		sh 'sudo mvn package'
 	}
+	
 	stage('build docker image')
+	
 	{
 		sh 'docker build -t manya97/jenkins_tryout:0.1 .'
 	}
