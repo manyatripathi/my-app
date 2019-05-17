@@ -72,7 +72,7 @@ node
 	stage('deploy pod')
 	
 	{
-		sh ' kubectl run tryout-pod --image=manya97/jenkins_tryout:0.1 -p 8989:8989 --generator=run/v1'
+		sh ' kubectl run tryout-pod --image=manya97/jenkins_tryout:0.1 --port=8989 --generator=run/v1'
 	}
 
 }
