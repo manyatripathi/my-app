@@ -47,11 +47,9 @@ node
 		junit 'target/surefire-reports/*.xml'
 		
 	}
-	stage('code coverage')
-	{	
-		sh "sudo mvn cobertura:cobertura -X"
-		publishCoverage adapters: [coberturaAdapter('/target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
-		
+	stage('build docker image')
+	{
+		sh 'docker build -t manya97/jenkins_tryout:0.1 .'
 	}
 
 }
