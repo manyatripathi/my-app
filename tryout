@@ -59,5 +59,11 @@ node
 	{
 		sh 'docker build -t manya97/jenkins_tryout:0.1 .'
 	}
+	
+	stage('push docker image')
+	{
+		sh 'docker login -u manya97 -p manya@docker'
+		sh 'docker push manya97/jenkins_tryout:0.1'
+	}
 
 }
