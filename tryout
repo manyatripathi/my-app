@@ -72,7 +72,7 @@ node
 	stage('deploy pod')
 	
 	{
-		sh 'kubectl delete pod tryout --ignore-not-found'
+		sh 'kubectl delete pod tryout-pod --ignore-not-found'
 		sh ' kubectl run tryout-pod --image=manya97/jenkins_tryout:0.1 --port=8989 --generator=run-pod/v1'
 	}
 
