@@ -32,7 +32,7 @@ node
 		withSonarQubeEnv('sonar-1')
       
 		{
-          
+          		jacoco buildOverBuild: true
 			sh 'sudo mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
       
 		}
