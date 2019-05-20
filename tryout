@@ -9,34 +9,26 @@ node
 	env.PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"
   
 	stage('code checkout')
-  
 	{
       
 		git 'https://github.com/manyatripathi/my-app'
       		sh "sudo mvn clean"
   
 	}
-  
 	stage('compile')
-  
 	{
       
 		sh "sudo mvn compile"
   
 	}
-  
   	stage('unit test')
-  
 	{
     		sh "sudo mvn test"
 		junit 'target/surefire-reports/*.xml'
 		
 	}
-	
 	stage('sonarqube analysis')
-  
 	{
-      
 		withSonarQubeEnv('sonar-1')
       
 		{
@@ -44,22 +36,26 @@ node
 			sh 'sudo mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
       
 		}
-      
-  
 	}
-	
+	stage('quality gate')
+  	{
+        	timeout(time: 10, unit: 'MINUTES') 
+          	{
+              		def qg = waitForQualityGate()
+              		if (qg.status != 'OK') 
+              		{
+                  		error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              		}
+          	}
+   	}
 	stage('war')
-	
 	{
 		sh 'sudo mvn package'
 	}
-	
 	stage('build docker image')
-	
 	{
 		sh 'docker build -t manya97/jenkins_tryout:0.1 .'
 	}
-	
 	stage('push docker image')
 	{
 		withCredentials([string(credentialsId: 'a5220faf-00b9-444a-8ccf-f6f84ba31e84', variable: 'docker_pwd')]) 
@@ -68,9 +64,7 @@ node
 		}
 		sh 'docker push manya97/jenkins_tryout:0.1'
 	}
-	
 	stage('deploy pod')
-	
 	{
 		sh 'kubectl delete pod tryout-pod --ignore-not-found'
 		sh ' kubectl run tryout-pod --image=manya97/jenkins_tryout:0.1 --port=8989 --generator=run-pod/v1'
