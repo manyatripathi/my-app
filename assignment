@@ -6,11 +6,6 @@ pipeline
 		maven 'MAVEN_HOME'
 		jdk 'JAVA_HOME'
 	}
-	environment
-	{      
-		PATH="$PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin"	
-	}
-
 	agent 
 	{
 		node 
