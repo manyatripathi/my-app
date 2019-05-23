@@ -36,17 +36,11 @@ pipeline
 				withSonarQubeEnv('sonar-1')
 			  
 				{
-					sh 'sudo mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
-					jacoco buildOverBuild: true
-			  
+					sh 'mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'			  
 				}
-				timeout(time: 2, unit: 'MINUTES') 
+				timeout(time: 1, unit: 'HOURS') 
 				{
-						def qg = waitForQualityGate()
-						if (qg.status != 'OK') 
-						{
-							error "Pipeline aborted due to quality gate failure: ${qg.status}"
-						}
+					waitForQualityGate abortPipeline: true
 				}
 			}
 		}
