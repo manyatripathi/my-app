@@ -5,7 +5,7 @@ pipeline
 	{
 		node 
 		{	
-			label 'new'
+			label ''
 			customWorkspace '/var/lib/jenkins/customworkspace'
 		}
 	}
