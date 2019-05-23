@@ -8,7 +8,7 @@ pipeline
 	}
 	environment
 	{      
-		PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"	
+		PATH="$PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin"	
 	}
 
 	agent 
