@@ -1,0 +1,54 @@
+pipeline 
+{
+
+	agent 
+	{
+		node 
+		{
+			customWorkspace '/var/lib/jenkins/customworkspace'
+		}
+	}
+	stages
+	{
+		stage('code checkout')
+		{
+			steps
+			{
+				git 'https://github.com/manyatripathi/my-app'
+				sh "mvn clean"
+			}
+	  
+		}
+		stage('compile')
+		{
+		  
+			sh "mvn compile"
+	  
+		}
+		stage('sonarqube analysis')
+		{
+			steps
+			{
+				withSonarQubeEnv('sonar-1')
+			  
+				{
+					sh 'sudo mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
+					jacoco buildOverBuild: true
+			  
+				}
+				timeout(time: 2, unit: 'MINUTES') 
+				{
+						def qg = waitForQualityGate()
+						if (qg.status != 'OK') 
+						{
+							error "Pipeline aborted due to quality gate failure: ${qg.status}"
+						}
+				}
+			}
+		}
+		
+	}
+  
+  
+  
+}
