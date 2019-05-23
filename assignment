@@ -1,9 +1,11 @@
-def MAVEN_HOME = tool name: 'MAVEN_HOME', type: 'maven'
-      
-def JAVA_HOME = tool "JAVA_HOME"
-
 pipeline 
 {
+
+	tools
+	{
+		maven 'MAVEN_HOME'
+		jdk 'JAVA_HOME'
+	}
 	environment
 	{      
 		PATH="${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"	
