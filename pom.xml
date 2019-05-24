@@ -43,13 +43,13 @@
 	</dependencies>
 	<distributionManagement>
 		 <snapshotRepository>
-		    <id>nexus</id>
-		    <url>http://13.233.125.37:8081/repository/maven-snapshots/</url>
+		    <id>artifactory</id>
+		    <url>http://52.172.195.61:8081/repository/assignment/</url>
 		 </snapshotRepository>
 		
 		<repository>
-		    <id>nexus</id>
-		    <url>http://13.233.125.37:8081/repository/maven-releases/</url>
+		    <id>artifactory</id>
+		    <url>http://52.172.195.61:8081/repository/assignment/</url>
 		</repository>
   	</distributionManagement>
 	
