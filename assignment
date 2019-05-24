@@ -73,6 +73,13 @@ pipeline
 				sh "mvn findbugs:findbugs"
 			}
 		}
+		stage('performance testing')
+		{
+			steps
+			{
+				sh "mvn verify"
+			}
+		}
 		
 	}
   
