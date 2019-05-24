@@ -80,6 +80,20 @@ pipeline
 				sh "mvn verify"
 			}
 		}
+		stage('war')
+		{
+			steps
+			{
+				sh "mvn war:war"
+			}
+		}
+		stage('deploy to artifactory')
+		{
+			steps
+			{
+				sh "mvn deploy"
+			}
+		}
 		
 	}
   
