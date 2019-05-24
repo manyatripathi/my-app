@@ -83,19 +83,7 @@
 	      <effort>Max</effort>
 	    </configuration>
 	  </plugin>
-	  <plugin>
-                    <groupId>com.lazerycode.jmeter</groupId>
-                    <artifactId>jmeter-maven-plugin</artifactId>
-                    <version>USE LAST VERSION</version>
-                    <executions>
-                        <execution>
-                            <id>jmeter-tests</id>
-                            <goals>
-                                <goal>jmeter</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-           </plugin> 
+	  
     </plugins>
 </build>
 	
