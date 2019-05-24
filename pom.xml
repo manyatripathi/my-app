@@ -41,14 +41,9 @@
 		</dependency>
 
 	</dependencies>
-	<distributionManagement>
-		 <snapshotRepository>
-		    <id>artifactory</id>
-		    <url>http://52.172.195.61:8081/artifactory/webapp/#/admin/repository/local/assignment</url>
-		 </snapshotRepository>
-		
+	<distributionManagemen>	
 		<repository>
-		    <id>artifactory</id>
+		    <id>artifactory-1</id>
 		    <url>http://52.172.195.61:8081/artifactory/webapp/#/admin/repository/local/assignment</url>
 		</repository>
   	</distributionManagement>
