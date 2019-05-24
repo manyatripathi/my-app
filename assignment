@@ -6,6 +6,10 @@ pipeline
 		maven 'MAVEN_HOME'
 		jdk 'JAVA_HOME'
 	}
+	options
+	{
+		buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30'))
+	}
 	agent 
 	{
 		node 
