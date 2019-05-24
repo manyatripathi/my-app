@@ -44,12 +44,12 @@
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>artifactory</id>
-		    <url>http://52.172.195.61:8081/repository/assignment/</url>
+		    <url>http://52.172.195.61:8081/artifactory/webapp/#/admin/repository/local/assignment</url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>artifactory</id>
-		    <url>http://52.172.195.61:8081/repository/assignment/</url>
+		    <url>http://52.172.195.61:8081/artifactory/webapp/#/admin/repository/local/assignment</url>
 		</repository>
   	</distributionManagement>
 	
