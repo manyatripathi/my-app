@@ -44,7 +44,7 @@
 	<distributionManagement>	
 		<repository>
 		    <id>artifactory-1</id>
-		    <url>http://52.172.195.61:8081/artifactory/webapp/#/admin/repository/local/assignment</url>
+		    <url>http://52.172.195.61:8081/artifactory/assignment</url>
 		</repository>
   	</distributionManagement>
 	
