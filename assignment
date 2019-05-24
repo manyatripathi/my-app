@@ -16,7 +16,6 @@ pipeline
 		{	
 			label ''
 			customWorkspace '/var/lib/jenkins/customworkspace'
-			deleteDir()
 		}
 	}
 	stages
