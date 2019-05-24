@@ -12,6 +12,7 @@ pipeline
 		{	
 			label ''
 			customWorkspace '/var/lib/jenkins/customworkspace'
+			deletedir()
 		}
 	}
 	stages
@@ -30,7 +31,6 @@ pipeline
 		  	steps
 			{
 				sh "mvn compile"
-				sh "mvn deploy -X"
 			}
 			
 	  
