@@ -43,16 +43,16 @@
 	</dependencies>
 	
 	<distributionManagement>
-		    <repository>
-			<id>artifactory-1</id>
-			<name>artifactory-1</name>
-			<url>http://localhost:8081/artifactory/assignment/</url>
-		    </repository>
-		    <snapshotRepository>
-			<id>snapshots</id>
-			<name>Snapshots</name>
-			<url>http://localhost:8081/artifactory/assignment/</url>
-		    </snapshotRepository>
+	    <repository>
+		<id>central</id>
+		<name>Manya-releases</name>
+		<url>http://52.172.195.61:8081/artifactory/assignment</url>
+	    </repository>
+	    <snapshotRepository>
+		<id>snapshots</id>
+		<name>Manya-snapshots</name>
+		<url>http://52.172.195.61:8081/artifactory/assignment</url>
+	    </snapshotRepository>
 	</distributionManagement>
 <build>
     <plugins>
