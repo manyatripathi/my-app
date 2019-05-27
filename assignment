@@ -8,7 +8,7 @@ pipeline
 	}
 	options
 	{
-		buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30'))
+		buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
 	}
 	agent 
 	{
@@ -47,7 +47,7 @@ pipeline
 				{
 					sh 'mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'			  
 				}
-				timeout(time: 1, unit: 'HOURS') 
+				timeout(time: 3, unit: 'MINUTES') 
 				{
 					waitForQualityGate abortPipeline: true
 				}
