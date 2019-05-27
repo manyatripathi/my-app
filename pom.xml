@@ -39,14 +39,17 @@
 		    <artifactId>jmeter-maven-plugin</artifactId>
 		    <version>2.6.0</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.jfrog.buildinfo/artifactory-maven-plugin -->
+		<dependency>
+		    <groupId>org.jfrog.buildinfo</groupId>
+		    <artifactId>artifactory-maven-plugin</artifactId>
+		    <version>2.2.1</version>
+		</dependency>
+
 
 	</dependencies>
-	<distributionManagement>	
-		<repository>
-		    <id>artifactory-1</id>
-		    <url>http://52.172.195.61:8081/artifactory</url>
-		</repository>
-  	</distributionManagement>
+	
 	
 <build>
     <plugins>
