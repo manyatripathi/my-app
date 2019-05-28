@@ -83,6 +83,10 @@ pipeline
 				}
 				stage('performance testing')
 				{
+					agent
+					{
+						label 'slave-1'
+					}
 					steps
 					{
 						sh "mvn verify"
