@@ -113,7 +113,10 @@ pipeline
 		}
 		stage('integration testing')
 		{
-			sh "mvn integration-test"
+			steps
+			{
+				sh "mvn integration-test"
+			}
 		}
 	}
   
