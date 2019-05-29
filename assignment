@@ -24,7 +24,7 @@ pipeline
 		{
 			steps
 			{
-				git 'git@github.com:manyatripathi/my-app'
+				git 'https://github.com/manyatripathi/my-app'
 				sh "mvn clean"
 			}
 	  
