@@ -24,6 +24,10 @@ pipeline
 		{
 			steps
 			{
+				script
+				{
+					properties([pipelineTriggers([githubPush()])])
+				}
 				git 'https://github.com/manyatripathi/my-app'
 				sh "mvn clean"
 			}
