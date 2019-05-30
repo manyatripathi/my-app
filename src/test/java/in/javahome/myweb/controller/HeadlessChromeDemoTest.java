@@ -1,4 +1,4 @@
-package demo;
+package in.javahome.myweb.controller;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.By;
