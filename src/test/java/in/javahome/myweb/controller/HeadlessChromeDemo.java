@@ -9,12 +9,12 @@ public class HeadlessChromeDemo
     {
         test();
     }
-    public static void test(String args[])
+    public static void test()
     {
         System.setProperty("ebdriver.chrome.driver","/usr/bin/chromedriver");
         
         ChromeOptions options=new ChromeOptions();
-        options.addArguments("--headless")
+        options.addArguments("--headless");
         
         WebDriver driver = new ChromeDriver(options);
         
