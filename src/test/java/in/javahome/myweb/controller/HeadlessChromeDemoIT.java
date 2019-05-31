@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.junit.Assert.*;				
-import org.junit.Test;
+import junit.framework.Assert;
+import junit.framework.TestCase;
 
 public class HeadlessChromeDemoIT
 {
