@@ -125,11 +125,11 @@
 		      </goals>
 		    </execution>
 		  </executions>
-		    <excludes>
-			    <goals>
-				    <goal>verify</goal>
-			    </goals>
-		    </excludes>    
+		  <configuration>
+			<!-- skips surefire tests without skipping failsafe tests.
+				 Property value seems to magically default to false -->
+			<skipTests>${skip.surefire.tests}</skipTests>
+		  </configuration>   
         </plugin>
 	    
 	    
