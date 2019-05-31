@@ -126,9 +126,9 @@
 		    </execution>
 		  </executions>
 		  <configuration>
-			<!-- skips surefire tests without skipping failsafe tests.
-				 Property value seems to magically default to false -->
-			<skipTests>${skip.surefire.tests}</skipTests>
+			<excludes>
+				<exclude>verify</exclude>
+			</excludes>
 		  </configuration>   
         </plugin>
 	    
