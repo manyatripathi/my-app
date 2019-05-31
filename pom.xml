@@ -125,6 +125,11 @@
 		      </goals>
 		    </execution>
 		  </executions>
+		    <excludes>
+			    <goals>
+				    <goal>verify</goal>
+			    </goals>
+		    </excludes>    
         </plugin>
 	    
 	    
