@@ -28,7 +28,7 @@ public class HeadlessChromeDemoIT
         
         driver.get("https:google.com");
         System.out.println(driver.getTitle());
-        assertEquals(driver.getTitle(),"Google");	
+        Assert.assertEquals(driver.getTitle(),"Google");	
         driver.close();
         driver.quit();
         
