@@ -62,7 +62,7 @@ pipeline
 		{
 			steps
 			{
-				sh "mvn test"
+				sh "mvn test -X"
 				junit 'target/surefire-reports/*.xml'
 				
 			}
