@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static org.junit.Assert.*;				
+import org.junit.Test;
+
 public class HeadlessChromeDemoIT
 {
     public static void main(String args[])
@@ -24,10 +27,9 @@ public class HeadlessChromeDemoIT
         
         driver.get("https:google.com");
         System.out.println(driver.getTitle());
-        driver.findElement(By.name("q")).sendKeys("Automation");
-        driver.findElement(By.name("btnK")).sendKeys(Keys.RETURN);
+        assertEquals(driver.getTitle(),"Google");	
         driver.close();
         driver.quit();
-        System.out.println("Completed");
+        
     }
 }
