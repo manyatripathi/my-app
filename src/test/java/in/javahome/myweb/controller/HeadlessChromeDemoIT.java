@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-public class HeadlessChromeDemoIT
+public class HeadlessChromeDemoIT extends TestCase
 {
     public static void main(String args[])
     {
