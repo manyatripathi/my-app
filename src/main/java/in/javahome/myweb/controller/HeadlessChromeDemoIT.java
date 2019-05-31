@@ -18,6 +18,7 @@ public class HeadlessChromeDemoIT
         
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("chrome.switches","--disable-extensions");
         
         WebDriver driver = new ChromeDriver(options);
         
