@@ -124,12 +124,7 @@
 			<goal>integration-test</goal>
 		      </goals>
 		    </execution>
-		  </executions>
-		  <configuration>
-			<excludes>
-				<exclude>verify</exclude>
-			</excludes>
-		  </configuration>   
+		  </executions>  
         </plugin>
 	    
 	    
