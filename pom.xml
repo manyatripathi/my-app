@@ -120,11 +120,7 @@
 		      </goals>
 		    </execution>
 		  </executions> 
-		    <configuration>
-			  <excludes>
-			    <exclude>${someModule.test.excludes}</exclude>
-			  </excludes>
-		    </configuration>	    
+		    	    
             </plugin>
 	    
 	    
