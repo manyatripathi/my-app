@@ -22,6 +22,7 @@ public class HeadlessChromeDemoIT extends TestCase
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("chrome.switches","--disable-extensions");
+        options.addArguments("chrome.switches","--no-sandbox");
         
         WebDriver driver = new ChromeDriver(options);
       
