@@ -94,7 +94,7 @@ pipeline
 					}
 					steps
 					{
-						sh "mvn -Dexclude.verify='**/*IT.java' verify"
+						sh "mvn verify"
 					}
 				}
 			}	
