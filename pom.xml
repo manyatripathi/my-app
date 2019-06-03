@@ -120,12 +120,7 @@
 		      </goals>
 		    </execution>
 		  </executions> 
-		  <configuration>
-			  <excludes>
-			    <exclude>${exclude.verify}</exclude>
-			  </excludes>
-		  </configuration>
-        </plugin>
+            </plugin>
 	    
 	    
 	    
