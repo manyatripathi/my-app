@@ -133,10 +133,7 @@ pipeline
 	{
 	    	always 
 		{
-			steps
-			{
-		      		deleteDir()
-			}
+	      		deleteDir()
 	    	}
 	}
   
