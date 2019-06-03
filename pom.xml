@@ -119,7 +119,12 @@
 			<goal>integration-test</goal>
 		      </goals>
 		    </execution>
-		  </executions>  
+		  </executions> 
+		  <configuration>
+			  <excludes>
+			    <exclude>${exclude.verify}</exclude>
+			  </excludes>
+		  </configuration>
         </plugin>
 	    
 	    
