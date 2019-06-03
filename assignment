@@ -94,7 +94,7 @@ pipeline
 					}
 					steps
 					{
-						sh "mvn -DsomeModule.test.excludes="**/*IT.java" verify"
+						sh "mvn verify"
 					}
 				}
 			}	
