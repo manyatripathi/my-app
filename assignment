@@ -129,6 +129,12 @@ pipeline
 		}
 	}
   
-  
+  	post 
+	{
+	    	always 
+		{
+	      		deleteDir()
+	    	}
+	}
   
 }
