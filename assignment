@@ -43,7 +43,7 @@ pipeline
 			
 	  
 		}
-		stage('sonarqube analysis')
+		/*stage('sonarqube analysis')
 		{
 			steps
 			{
@@ -74,7 +74,7 @@ pipeline
 				sh "mvn cobertura:cobertura"
 				step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
 			}
-		}
+		}*/
 		/*
 		stage('performance and security')
 		{
@@ -108,7 +108,7 @@ pipeline
 				sh "mvn war:war"
 			}
 		}
-		stage('deploy to artifactory')
+		/*stage('deploy to artifactory')
 		{
 			steps
 			{
@@ -121,7 +121,7 @@ pipeline
 			{
 				sh "cp target/myweb-0.0.5.war /opt/tomcat/apache-tomcat-9.0.20/webapps"
 			}
-		}
+		}*/
 		/*
 		stage('integration testing')
 		{
