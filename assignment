@@ -138,7 +138,7 @@ pipeline
 	    	always 
 		{
 	      		deleteDir()
-			mail to: 'manya.tripathi@infosys.com',
+			mail to: 'manyatripathi02@gmail.com',
 			subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
 			body: "${env.BUILD_URL} has result ${currentBuild.result}"
 	    	}
