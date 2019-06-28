@@ -1,0 +1,14 @@
+node 
+{
+try{
+stage('bakar'){
+  sh 'exit 1'
+}
+}
+catch(e){
+		echo "Pipeline has failed"
+		emailext body: "${env.BUILD_URL} has result ${currentBuild.result} at stage ${FAILED_STAGE} with error" + e.toString(), subject: "Failure of pipeline: ${currentBuild.fullDisplayName}", to: '${mailrecipent}'
+	}
+  
+  }
+  
