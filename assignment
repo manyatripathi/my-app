@@ -1,4 +1,4 @@
-def FAILED_STAGE=""
+def FAILED_STAGE
 pipeline 
 {
 
@@ -25,11 +25,11 @@ pipeline
 		
 		stage('code checkout')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			steps
 			{
 				script
 				{
+					FAILED_STAGE=env.STAGE_NAME
 					properties([pipelineTriggers([githubPush()])])
 				}
 				git 'https://github.com/manyatripathi/my-app'
@@ -39,9 +39,13 @@ pipeline
 		}
 		stage('compile')
 		{
-			FAILED_STAGE=env.STAGE_NAME
+			
 		  	steps
 			{
+				script
+				{
+					FAILED_STAGE=env.STAGE_NAME
+				}
 				sh "mvn compile"
 			}
 			
@@ -49,11 +53,14 @@ pipeline
 		}
 		stage('sonarqube analysis')
 		{
-			FAILED_STAGE=env.STAGE_NAME
+			
 			steps
 			{
+				script
+				{
+					FAILED_STAGE=env.STAGE_NAME
+				}
 				withSonarQubeEnv('sonar-1')
-			  
 				{
 					sh 'mvn sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000"'			  
 				}
@@ -66,7 +73,6 @@ pipeline
 		/*
 		stage('unit test')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			steps
 			{
 				sh "mvn test"
@@ -76,7 +82,6 @@ pipeline
 		}
 		stage('code coverage')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			steps
 			{
 				sh "mvn cobertura:cobertura"
@@ -86,7 +91,6 @@ pipeline
 		/*
 		stage('performance and security')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			parallel
 			{
 				stage('security testing')
@@ -112,15 +116,17 @@ pipeline
 		*/
 		stage('war')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			steps
 			{
+				script
+				{
+					FAILED_STAGE=env.STAGE_NAME
+				}
 				sh "mvn war:war"
 			}
 		}
 		/*stage('deploy to artifactory')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			steps
 			{
 				sh "mvn deploy"
@@ -128,7 +134,6 @@ pipeline
 		}
 		stage ('deploy to tomcat')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			steps
 			{
 				sh "cp target/myweb-0.0.5.war /opt/tomcat/apache-tomcat-9.0.20/webapps"
@@ -137,7 +142,6 @@ pipeline
 		/*
 		stage('integration testing')
 		{
-			FAILED_STAGE=env.STAGE_NAME
 			steps
 			{ 
 				sh "mvn integration-test"
