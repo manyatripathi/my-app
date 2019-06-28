@@ -8,7 +8,7 @@ stage('bakar'){
 }
 catch(e){
 		echo "Pipeline has failed"
-		emailext body: "${env.BUILD_URL} has result ${currentBuild.result} at  with error" + e.toString(), subject: "Failure of pipeline: ${currentBuild.fullDisplayName}", to: '${mailrecipent}'
+		emailext body: "${env.BUILD_URL} has result ${currentBuild.result} at  with error" + e.toString(), subject: "Failure of pipeline: ${currentBuild.fullDisplayName}", to: 'manyatripathi02@gmail.com'
 	}
   
   }
