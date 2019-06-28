@@ -3,7 +3,7 @@ node
 {
 try{
 stage('bakar'){
-  sh 'exit 1'
+  error("khghgdfg")
 }
 }
 catch(e){
