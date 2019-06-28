@@ -1,4 +1,4 @@
-def FAILED_STAGE
+def FAILED_STAGE=""
 pipeline 
 {
 
