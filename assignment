@@ -70,7 +70,6 @@ pipeline
 				}
 			}
 		}
-		/*
 		stage('unit test')
 		{
 			steps
@@ -87,7 +86,7 @@ pipeline
 				sh "mvn cobertura:cobertura"
 				step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
 			}
-		}*/
+		}
 		/*
 		stage('performance and security')
 		{
@@ -156,7 +155,7 @@ pipeline
 		{
 			mail to: 'manyatripathi02@gmail.com',
 			subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
-			body: "${env.BUILD_URL} has result ${currentBuild.result} at stage ${FAILED_STAGE}"+e.toString()
+			body: "${env.BUILD_URL} has result ${currentBuild.result} at stage ${FAILED_STAGE}"
 	    	}
 	}
   
