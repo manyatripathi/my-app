@@ -62,7 +62,7 @@ pipeline
 				}
 				withSonarQubeEnv('sonar-1')
 				{
-					sh 'mvn package'
+					sh 'mvn findbugs:findbugs'
 					sh 'mvn sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000"'			  
 				}
 				timeout(time: 10, unit: 'MINUTES') 
@@ -113,7 +113,6 @@ pipeline
 				}
 			}	
 		}
-		*/
 		stage('war')
 		{
 			steps
@@ -124,7 +123,7 @@ pipeline
 				}
 				sh "mvn war:war"
 			}
-		}
+		}*/
 		/*stage('deploy to artifactory')
 		{
 			steps
@@ -154,9 +153,11 @@ pipeline
 	{
 	    	always 
 		{
+		/*
 			mail to: 'manyatripathi02@gmail.com',
 			subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
 			body: "${env.BUILD_URL} has result ${currentBuild.result} at stage ${FAILED_STAGE}"
+		*/	
 	    	}
 	}
   
