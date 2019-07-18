@@ -32,7 +32,7 @@ pipeline
 					FAILED_STAGE=env.STAGE_NAME
 					properties([pipelineTriggers([githubPush()])])
 				}
-				git 'https://github.com/subir0071/spring-petclinic.git'
+				git 'https://github.com/manyatripathi/my-app'
 				sh "mvn clean"
 			}
 	  
