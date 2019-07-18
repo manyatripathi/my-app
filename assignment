@@ -51,7 +51,7 @@ pipeline
 			
 	  
 		}
-		stage('sonarqube analysis')
+		/*stage('sonarqube analysis')
 		{
 			
 			steps
@@ -70,6 +70,13 @@ pipeline
 				{
 					waitForQualityGate abortPipeline: true
 				}
+			}
+		}*/
+		stage
+		{
+			steps
+			{	
+				mvn flyway:info
 			}
 		}
 		/*stage('unit test')
