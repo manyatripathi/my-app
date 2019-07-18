@@ -76,7 +76,7 @@ pipeline
 		{
 			steps
 			{	
-				sh 'mvn flyway:info'
+				sh 'mvn flyway:info -X'
 			}
 		}
 		/*stage('unit test')
