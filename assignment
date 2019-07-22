@@ -51,7 +51,7 @@ pipeline
 			
 	  
 		}
-		/*stage('sonarqube analysis')
+		stage('sonarqube analysis')
 		{
 			
 			steps
@@ -62,7 +62,6 @@ pipeline
 				}
 				withSonarQubeEnv('sonar-1')
 				{
-					sh 'mvn cobertura:cobertura'
 					sh 'mvn findbugs:findbugs'
 					sh 'mvn sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000"'			  
 				}
@@ -71,15 +70,15 @@ pipeline
 					waitForQualityGate abortPipeline: true
 				}
 			}
-		}*/
-		stage('flyway')
+		}
+		/*stage('flyway')
 		{
 			steps
 			{	
 				sh 'mvn flyway:info -X'
 			}
 		}
-		/*stage('unit test')
+		stage('unit test')
 		{
 			steps
 			{
@@ -87,7 +86,7 @@ pipeline
 				junit 'target/surefire-reports/*.xml'
 				
 			}
-		}
+		}*/
 		stage('code coverage')
 		{
 			steps
@@ -95,7 +94,7 @@ pipeline
 				sh "mvn cobertura:cobertura"
 				step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
 			}
-		}*/
+		}
 		/*
 		stage('performance and security')
 		{
