@@ -91,7 +91,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'mvn cobertura:cobertura -Dsonar.host.url="http://52.172.195.61:9000"'
+				sh 'mvn sonar:sonar cobertura:cobertura -Dsonar.host.url="http://52.172.195.61:9000"'
 				//step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
 			}
 		}
