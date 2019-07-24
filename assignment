@@ -75,7 +75,7 @@ pipeline
 		{
 			steps
 			{	
-				sh 'mvn liquibase:help -X'
+				sh 'mvn liquibase:update -X'
 			}
 		}
 		/*stage('flyway')
