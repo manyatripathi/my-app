@@ -76,7 +76,24 @@
                 <target>1.7</target>    
             </configuration>
         </plugin>
-	    
+	    <plugin>
+		<groupId>org.liquibase</groupId>
+		<artifactId>liquibase-maven-plugin</artifactId>
+		<configuration>
+		  <changeLogFile>
+		    ${basedir}/src/main/liquibase/master.xml
+		  </changeLogFile>
+		  <url>jdbc:postgresql://172.16.12.13:5432/test</url>
+                  <user>postgres</user>
+		</configuration>
+		<dependencies>
+                    <dependency>
+			   <groupId>org.postgresql</groupId>
+			   <artifactId>postgresql</artifactId>
+			   <version>9.3-1102-jdbc41</version>
+	            </dependency>
+                </dependencies>
+	      </plugin>
 <!-- 	  <plugin>
             <groupId>org.sonarsource.scanner.maven</groupId>
             <artifactId>sonar-maven-plugin</artifactId>
