@@ -84,7 +84,7 @@
 		    ${basedir}/src/main/java/in/javahome/myweb/controller/db-changelog.xml
 		  </changeLogFile>
 		  <url>jdbc:postgresql://172.16.12.13:5432/test</url>
-                  <user>postgres</user>
+                  <username>postgres</username>
 		</configuration>
 		<dependencies>
                     <dependency>
