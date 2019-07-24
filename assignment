@@ -75,7 +75,7 @@ pipeline
 		{
 			steps
 			{	
-				sh 'mvn liquibase:rollback -X'
+				sh 'mvn liquibase:rollback -Dliquibase.rollbackCount=1 -X'
 			}
 		}
 		/*stage('flyway')
