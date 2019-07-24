@@ -51,7 +51,7 @@ pipeline
 			
 	  
 		}
-		stage('sonarqube analysis')
+		/*stage('sonarqube analysis')
 		{
 			
 			steps
@@ -70,6 +70,13 @@ pipeline
 					waitForQualityGate abortPipeline: true
 				}
 			}
+		}*/
+		stage('liquibase')
+		{
+			steps
+			{	
+				sh 'mvn liquibase:help -X'
+			}
 		}
 		/*stage('flyway')
 		{
@@ -86,7 +93,7 @@ pipeline
 				junit 'target/surefire-reports/*.xml'
 				
 			}
-		}*/
+		}
 		stage('code coverage')
 		{
 			steps
@@ -94,7 +101,7 @@ pipeline
 				sh 'mvn  cobertura:cobertura sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000"'
 				//step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
 			}
-		}
+		}*/
 		/*
 		stage('performance and security')
 		{
