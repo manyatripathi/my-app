@@ -51,6 +51,7 @@ pipeline
 			
 	  
 		}
+		/*
 		stage('sonarqube analysis')
 		{
 			
@@ -70,7 +71,7 @@ pipeline
 					waitForQualityGate abortPipeline: true
 				}
 			}
-		}/*
+		}
 		stage('liquibase')
 		{
 			steps
@@ -84,7 +85,7 @@ pipeline
 			{	
 				sh 'mvn flyway:info -X'
 			}
-		}
+		}*/
 		stage('unit test')
 		{
 			steps
@@ -98,10 +99,31 @@ pipeline
 		{
 			steps
 			{
-				sh 'mvn  cobertura:cobertura sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000"'
+				sh 'mvn package'
+				jacoco(deltaBranchCoverage: '10', deltaClassCoverage: '10', deltaComplexityCoverage: '10', deltaInstructionCoverage: '10', deltaLineCoverage: '10', deltaMethodCoverage: '20')
 				//step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
 			}
-		}*/
+		}
+		stage('sonarqube analysis')
+		{
+			
+			steps
+			{
+				script
+				{
+					FAILED_STAGE=env.STAGE_NAME
+				}
+				withSonarQubeEnv('sonar-1')
+				{
+					//sh 'mvn findbugs:findbugs'
+					sh 'mvn sonar:sonar -Dsonar.host.url="https://infysonar/" -Dsonar.projectKey="ADMDOAST_my-app"'			  
+				}
+				timeout(time: 10, unit: 'MINUTES') 
+				{
+					waitForQualityGate abortPipeline: true
+				}
+			}
+		}
 		/*
 		stage('performance and security')
 		{
