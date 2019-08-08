@@ -64,7 +64,7 @@ pipeline
 				withSonarQubeEnv('sonar-1')
 				{
 					//sh 'mvn findbugs:findbugs'
-					sh 'mvn sonar:sonar -Dsonar.host.url="https://infysonar/" -Dsonar.projectKey="ADMDOAST_my-app"'			  
+					sh 'mvn sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000" '		  
 				}
 				timeout(time: 10, unit: 'MINUTES') 
 				{
@@ -115,8 +115,8 @@ pipeline
 				}
 				withSonarQubeEnv('sonar-1')
 				{
-					//sh 'mvn findbugs:findbugs'
-					sh 'mvn sonar:sonar -Dsonar.host.url="https://infysonar/" -Dsonar.projectKey="ADMDOAST_my-app"'			  
+					sh 'mvn findbugs:findbugs'
+					sh 'mvn sonar:sonar-Dsonar.host.url="http://52.172.195.61:9000" '			  
 				}
 				timeout(time: 10, unit: 'MINUTES') 
 				{
