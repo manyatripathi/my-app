@@ -85,7 +85,7 @@ pipeline
 			{	
 				sh 'mvn flyway:info -X'
 			}
-		}*/
+		}
 		stage('unit test')
 		{
 			steps
@@ -123,7 +123,7 @@ pipeline
 					waitForQualityGate abortPipeline: true
 				}
 			}
-		}
+		}*/
 		/*
 		stage('performance and security')
 		{
@@ -148,7 +148,7 @@ pipeline
 					}
 				}
 			}	
-		}
+		}*/
 		stage('war')
 		{
 			steps
@@ -159,14 +159,14 @@ pipeline
 				}
 				sh "mvn war:war"
 			}
-		}*/
-		/*stage('deploy to artifactory')
+		}
+		stage('deploy to artifactory')
 		{
 			steps
 			{
 				sh "mvn deploy"
 			}
-		}
+		}/*
 		stage ('deploy to tomcat')
 		{
 			steps
