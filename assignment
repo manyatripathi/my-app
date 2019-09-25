@@ -52,26 +52,6 @@ pipeline
 	  
 		}
 		/*
-		stage('sonarqube analysis')
-		{
-			
-			steps
-			{
-				script
-				{
-					FAILED_STAGE=env.STAGE_NAME
-				}
-				withSonarQubeEnv('sonar-1')
-				{
-					//sh 'mvn findbugs:findbugs'
-					sh 'mvn sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000" '		  
-				}
-				timeout(time: 10, unit: 'MINUTES') 
-				{
-					waitForQualityGate abortPipeline: true
-				}
-			}
-		}
 		stage('liquibase')
 		{
 			steps
@@ -100,8 +80,7 @@ pipeline
 			steps
 			{
 				sh 'mvn package'
-				jacoco(deltaBranchCoverage: '10', deltaClassCoverage: '10', deltaComplexityCoverage: '10', deltaInstructionCoverage: '10', deltaLineCoverage: '10', deltaMethodCoverage: '20')
-				//step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
+				
 			}
 		}
 		stage('sonarqube analysis')
@@ -115,7 +94,6 @@ pipeline
 				}
 				withSonarQubeEnv('sonar-1')
 				{
-					sh 'mvn findbugs:findbugs'
 					sh 'mvn sonar:sonar -Dsonar.host.url="http://52.172.195.61:9000" '			  
 				}
 				timeout(time: 10, unit: 'MINUTES') 
