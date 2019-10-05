@@ -66,7 +66,7 @@
 	    </snapshotRepository>
 	</distributionManagement> -->
 	
-	<distributionManagement>
+<!-- 	<distributionManagement>
 	    <repository>
 		<id>central</id>
 		<name>PUNHJWADMDOSTP-releases</name>
@@ -76,6 +76,18 @@
 		<id>snapshots</id>
 		<name>PUNHJWADMDOSTP-snapshots</name>
 		<url>http://10.76.81.93:8088/artifactory/assignment</url>
+	    </snapshotRepository>
+	</distributionManagement> -->
+	<distributionManagement>
+	    <repository>
+		<id>central</id>
+		<name>a3b2ee5e23d3-releases</name>
+		<url>http://35.238.87.231:8081/artifactory/ansible-docker</url>
+	    </repository>
+	    <snapshotRepository>
+		<id>snapshots</id>
+		<name>a3b2ee5e23d3-snapshots</name>
+		<url>http://35.238.87.231:8081/artifactory/ansible-docker</url>
 	    </snapshotRepository>
 	</distributionManagement>
 <build>
