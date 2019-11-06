@@ -11,13 +11,13 @@ node
   {
       sh "sudo mvn clean"
       sh "sudo mvn compile"
-      sh "sudo mvn package"
+      //sh "sudo mvn package"
   }
-  stage('SOnarQube Analysis')
-  {
-      withSonarQubeEnv('sonar-1')
-      {
-          sh 'sudo mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
-      }
-  }
+//  stage('SOnarQube Analysis')
+//  {
+//      withSonarQubeEnv('sonar-1')
+//      {
+//          sh 'sudo mvn sonar:sonar -Dsonar.host.url="http://localhost:9000"'
+//      }
+//  }
 }
